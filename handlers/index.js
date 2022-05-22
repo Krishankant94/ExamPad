@@ -1,6 +1,7 @@
 const subjectList = require("../storage/subjects.json");
 const questionSet = require("../storage/questions.json");
 const answerkey = require("../storage/answerKey.json");
+const { getPercentage } = require("../utils/appUtils");
 
 const getSubjectList = () => {
   const list = subjectList;
@@ -38,7 +39,7 @@ const getResult = (solutionList, subId) => {
   });
 
   return {
-    score,
+    score: getPercentage(score, solutionList.length),
     correctAnswers,
     wrongAnswers,
   };

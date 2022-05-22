@@ -22,7 +22,13 @@ const getQuestionFormat = (data) => {
   };
 };
 
+const getPercentage = (score, total) => {
+  const per = (score * 100) / total;
+  return `${per}%`;
+};
+
 module.exports = {
   writeToFile,
   getQuestionFormat,
+  getPercentage,
 };
