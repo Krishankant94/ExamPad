@@ -24,7 +24,7 @@ const getQuestionFormat = (data) => {
 
 const getPercentage = (score, total) => {
   const per = (score * 100) / total;
-  return `${per}%`;
+  return `${per.toFixed(2)}%`;
 };
 
 module.exports = {
